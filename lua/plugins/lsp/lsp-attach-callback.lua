@@ -80,6 +80,7 @@ return function(event)
 	--
 	-- This may be unwanted, since they displace some of your code
 	if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+		-- vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
 		map("<leader>lh", function()
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 		end, "Toggle Inlay [H]ints")
