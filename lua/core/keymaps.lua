@@ -63,7 +63,7 @@ vim.keymap.set("n", "<leader>wq", ":qa<CR>", with_desc(opts, "[Q]uit"))
 -- vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) --  go to previous tab
 
 -- Toggle line wrapping
-vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", with_desc(opts, "Toggle line wrapping"))
+vim.keymap.set("n", "<leader>ll", "<cmd>set wrap!<CR>", with_desc(opts, "Toggle [L]ine Wrapping"))
 
 -- Stay in indent mode
 -- vim.keymap.set('v', '<', '<gv', opts)

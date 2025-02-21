@@ -34,20 +34,8 @@ return {
 				includeInlayEnumMemberValueHints = true,
 			},
 		},
-		javascript = {
-			tsserver = {
-				useSyntaxServer = false,
-			},
-			inlayHints = {
-				includeInlayParameterNameHints = "all", -- none | literals | all
-				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayVariableTypeHints = true,
-				includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayEnumMemberValueHints = true,
-			},
+		completions = {
+			completeFunctionCalls = true,
 		},
 	},
 }
