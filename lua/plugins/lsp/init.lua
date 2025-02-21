@@ -83,7 +83,7 @@ return {
 			yamlls = {},
 			lua_ls = require("plugins.lsp.servers.lua_ls"),
 			phpactor = {},
-			-- intelephense = {},
+			intelephense = {},
 			volar = require("plugins.lsp.servers.volar"),
 			ts_ls = require("plugins.lsp.servers.ts_ls"),
 			-- vtsls = require("plugins.lsp.servers.vtsls"),
