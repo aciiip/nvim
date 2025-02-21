@@ -25,10 +25,10 @@ return {
 			}
 
 			dashboard.section.buttons.val = {
-				dashboard.button("f", " " .. " Find file", "<cmd> Telescope find_files <cr>"),
 				dashboard.button("n", " " .. " New file", "<cmd> enew <cr>"),
-				-- dashboard.button("r", " " .. " Recent files", "<cmd> Telescope resume <cr>"),
+				dashboard.button("f", " " .. " Find file", "<cmd> Telescope find_files <cr>"),
 				dashboard.button("g", " " .. " Find text", "<cmd> Telescope grep_string <cr>"),
+				-- dashboard.button("r", " " .. " Recent files", "<cmd> Telescope resume <cr>"),
 				dashboard.button(
 					"s",
 					" " .. " Restore Session",
