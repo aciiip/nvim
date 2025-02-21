@@ -57,10 +57,7 @@ return function(event)
 		vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 			buffer = event.buf,
 			group = highlight_augroup,
-			-- callback = vim.lsp.buf.document_highlight,
-			callback = function()
-				-- TODO: add callback
-			end,
+			callback = vim.lsp.buf.document_highlight,
 		})
 
 		vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {

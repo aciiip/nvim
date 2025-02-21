@@ -48,7 +48,7 @@ vim.keymap.set("n", "<leader>bn", "<cmd> enew <CR>", with_desc(opts, "[B]uffer [
 -- vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
 -- vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
 -- vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
-vim.keymap.set("n", "<leader>we", ":qa<CR>", with_desc(opts, "[E]xit"))
+vim.keymap.set("n", "<leader>wq", ":qa<CR>", with_desc(opts, "[Q]uit"))
 
 -- Navigate between splits
 -- vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
