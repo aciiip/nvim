@@ -28,5 +28,6 @@ require("lazy").setup({
 	require("plugins.alpha"),
 	require("plugins.misc"),
 	require("plugins.indent-blankline"),
+	require("plugins.noice"),
 	-- require("plugins.lint"),
 })

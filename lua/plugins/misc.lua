@@ -50,4 +50,13 @@ return {
 			})
 		end,
 	},
+	{
+		-- Coment shortcut
+		"numToStr/Comment.nvim",
+		opts = {},
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		opts = {},
+	},
 }
