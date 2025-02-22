@@ -141,7 +141,7 @@ return {
 					["<cr>"] = "open",
 					["<esc>"] = "cancel", -- close preview or floating neo-tree window
 					["P"] = { "toggle_preview", config = { use_float = true } },
-					["l"] = "open",
+					-- ["l"] = "open",
 					["S"] = "open_split",
 					["s"] = "open_vsplit",
 					-- ["S"] = "split_with_window_picker",
@@ -151,11 +151,11 @@ return {
 					-- ["t"] = "open_tab_drop",
 					["w"] = "open_with_window_picker",
 					--["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
-					["C"] = "close_node",
-					-- ['C'] = 'close_all_subnodes',
+					-- ["C"] = "close_node",
+					["C"] = "close_all_subnodes",
 					["z"] = "close_all_nodes",
 					--["Z"] = "expand_all_nodes",
-					["a"] = {
+					["n"] = {
 						"add",
 						-- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
 						-- some commands may take optional config options, see `:h neo-tree-mappings` for details
@@ -163,7 +163,7 @@ return {
 							show_path = "none", -- "none", "relative", "absolute"
 						},
 					},
-					["A"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
+					["N"] = "add_directory", -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
 					["d"] = "delete",
 					["r"] = "rename",
 					["y"] = "copy_to_clipboard",
@@ -183,6 +183,7 @@ return {
 					["<"] = "prev_source",
 					[">"] = "next_source",
 					["i"] = "show_file_details",
+					["L"] = "cancel", -- disable conflict keymap
 				},
 			},
 			nesting_rules = {},

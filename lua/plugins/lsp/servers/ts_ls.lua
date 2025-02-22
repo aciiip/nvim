@@ -34,8 +34,5 @@ return {
 				includeInlayEnumMemberValueHints = true,
 			},
 		},
-		completions = {
-			completeFunctionCalls = true,
-		},
 	},
 }
