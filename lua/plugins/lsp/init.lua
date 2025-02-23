@@ -104,8 +104,6 @@ return {
 			-- "stylua", -- Used to format Lua code
 			-- "phpcs",
 			-- "php-cs-fixer",
-			-- "vtsls",
-			"js-debug-adapter",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

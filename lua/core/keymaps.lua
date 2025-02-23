@@ -41,7 +41,11 @@ vim.keymap.set("n", "<Right>", ":vertical resize -2<CR>", with_desc(opts, "Resiz
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", with_desc(opts, "Next Buffer"))
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", with_desc(opts, "Previous Buffer"))
 vim.keymap.set("n", "<leader>bd", ":Bdelete!<CR>", with_desc(opts, "[B]uffer [D]elete")) -- close buffer
-vim.keymap.set("n", "<leader>bn", "<cmd> enew <CR>", with_desc(opts, "[B]uffer [N]ew")) -- new buffer
+vim.keymap.set("n", "<leader>bc", "<cmd> enew <CR>", with_desc(opts, "[B]uffer [C]reate")) -- new buffer
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", with_desc(opts, "[B]uffer [N]ext"))
+vim.keymap.set("n", "<leader>bN", ":bprevious<CR>", with_desc(opts, "Previous Buffer"))
+vim.keymap.set("n", "<leader>bf", ":bfirst<CR>", with_desc(opts, "[B]uffer [F]irst"))
+vim.keymap.set("n", "<leader>bl", ":blast<CR>", with_desc(opts, "[B]uffer [L]ast"))
 
 -- Window management
 -- vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
@@ -73,7 +77,7 @@ vim.keymap.set("n", "<leader>ll", "<cmd>set wrap!<CR>", with_desc(opts, "Toggle 
 -- vim.keymap.set('v', 'p', '"_dP', opts)
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set("n", "<leader>dN", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+vim.keymap.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Open [f]loating diagnostic message" })
+vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics [l]ist" })

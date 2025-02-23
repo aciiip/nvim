@@ -21,7 +21,7 @@ return {
 		})
 
 		local sources = {
-			diagnostic.phpcs.with({ extra_args = { "--standard=PSR12" } }),
+			diagnostic.phpcs.with({ extra_args = { "--standard=PSR20" } }),
 			-- require("none-ls.diagnostics.eslint_d"),
 
 			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
