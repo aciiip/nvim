@@ -75,7 +75,7 @@ return {
 			pylsp = require("plugins.lsp.servers.pylsp"),
 			html = require("plugins.lsp.servers.html"),
 			cssls = {},
-			tailwindcss = {},
+			-- tailwindcss = {},
 			dockerls = {},
 			sqlls = {},
 			terraformls = {},

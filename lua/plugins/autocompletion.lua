@@ -33,6 +33,8 @@ return { -- Autocompletion
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
+
+		"aciiip/nvim-c-css",
 	},
 	config = function()
 		-- See `:help cmp`
@@ -158,6 +160,16 @@ return { -- Autocompletion
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{
+					name = "c_css",
+					option = {
+						enable_on = { "html", "vue" }, -- html is enabled by default
+						notify = true,
+						documentation = {
+							auto_show = true, -- show documentation on select
+						},
+					},
+				},
 			},
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
@@ -168,6 +180,7 @@ return { -- Autocompletion
 						luasnip = "[Snippet]",
 						buffer = "[Buffer]",
 						path = "[Path]",
+						c_css = "[C_CSS]",
 					})[entry.source.name]
 					return vim_item
 				end,
