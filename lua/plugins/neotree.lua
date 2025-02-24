@@ -140,7 +140,7 @@ return {
 					["<2-LeftMouse>"] = "open",
 					["<cr>"] = "open",
 					["<esc>"] = "cancel", -- close preview or floating neo-tree window
-					["<space>"] = { "toggle_preview", config = { use_float = true } },
+					["P"] = { "toggle_preview", config = { use_float = true } },
 					-- ["l"] = "open",
 					["S"] = "open_split",
 					["s"] = "open_vsplit",

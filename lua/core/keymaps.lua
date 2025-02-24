@@ -32,10 +32,10 @@ vim.keymap.set("n", "n", "nzzzv", with_desc(opts, "Previous and center"))
 vim.keymap.set("n", "N", "Nzzzv", with_desc(opts, "Next and center"))
 
 -- Resize with arrows
-vim.keymap.set("n", "<Up>", ":resize +2<CR>", with_desc(opts, "Resize window +2"))
-vim.keymap.set("n", "<Down>", ":resize -2<CR>", with_desc(opts, "Resize window -2"))
-vim.keymap.set("n", "<Left>", ":vertical resize +2<CR>", with_desc(opts, "Resize window vertical +2"))
-vim.keymap.set("n", "<Right>", ":vertical resize -2<CR>", with_desc(opts, "Resize window vertical -2"))
+vim.keymap.set("n", "<A-Up>", ":resize +2<CR>", with_desc(opts, "Resize window +2"))
+vim.keymap.set("n", "<A-Down>", ":resize -2<CR>", with_desc(opts, "Resize window -2"))
+vim.keymap.set("n", "<A-Left>", ":vertical resize +2<CR>", with_desc(opts, "Resize window vertical +2"))
+vim.keymap.set("n", "<A-Right>", ":vertical resize -2<CR>", with_desc(opts, "Resize window vertical -2"))
 
 -- Buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", with_desc(opts, "Next Buffer"))
@@ -51,8 +51,8 @@ vim.keymap.set("n", "<leader>bl", ":blast<CR>", with_desc(opts, "[B]uffer [L]ast
 -- vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
 -- vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
 -- vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
--- vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
-vim.keymap.set("n", "<leader>wq", ":qa<CR>", with_desc(opts, "[Q]uit"))
+vim.keymap.set("n", "<leader>wc", ":close<CR>", with_desc(opts, "[W]indow [C]lose")) -- close current split window
+vim.keymap.set("n", "<leader>wq", ":qa<CR>", with_desc(opts, "[W]indow [Q]uit all"))
 
 -- Navigate between splits
 -- vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
