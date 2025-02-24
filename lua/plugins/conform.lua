@@ -13,7 +13,7 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         php = { "php-cs-fixer" },
-        ["blade.php"] = { "blade-formatter" },
+        blade = { "blade-formatter" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         vue = { "prettier" },
@@ -22,7 +22,7 @@ return {
       format_on_save = {
         lsp_fallback = true,
         async = false,
-        timeout_ms = 1000,
+        timeout_ms = 2000,
       },
       notify_on_error = true,
       formatters = {
