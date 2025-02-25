@@ -180,8 +180,12 @@ return { -- Autocompletion
             luasnip = "[Snippet]",
             buffer = "[Buffer]",
             path = "[Path]",
-            c_css = "[C_CSS]",
           })[entry.source.name]
+
+          if entry.source.name == "c_css" then
+            vim_item.menu = "[" .. (entry.completion_item.provider or "C_CSS") .. "]"
+          end
+
           return vim_item
         end,
       },
