@@ -1,5 +1,8 @@
 return {
   "nvim-lualine/lualine.nvim",
+  dependecies = {
+    "folke/noice.nvim",
+  },
   config = function()
     local mode = {
       "mode",
@@ -54,10 +57,18 @@ return {
         lualine_b = { "branch" },
         lualine_c = { filename },
         lualine_x = {
+          {
+            require("noice").api.status.mode.get,
+            cond = require("noice").api.status.mode.has,
+          },
           diagnostics,
           diff,
           { "encoding", cond = hide_in_width },
           { "filetype", cond = hide_in_width },
+          {
+            require("noice").api.status.command.get,
+            cond = require("noice").api.status.command.has,
+          },
         },
         lualine_y = { "location" },
         lualine_z = { "progress" },
