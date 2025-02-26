@@ -8,14 +8,19 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 -- For conciseness
 local opts = { noremap = true, silent = true }
 local with_desc = function(opt, desc)
-	return vim.tbl_extend("force", opt, { desc = desc })
+  return vim.tbl_extend("force", opt, { desc = desc })
 end
 
 -- save file
 -- vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
 
 -- save file without auto-formatting
-vim.keymap.set("n", "<leader>s", "<cmd>noautocmd w <CR>", with_desc(opts, "Save file without auto-formatting"))
+vim.keymap.set(
+  "n",
+  "<leader>s",
+  "<cmd>noautocmd w <CR>",
+  with_desc(opts, "Save file without auto-formatting")
+)
 
 -- quit file
 vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", with_desc(opts, "Quit"))
@@ -24,8 +29,8 @@ vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", with_desc(opts, "Quit"))
 -- vim.keymap.set('n', 'x', '"_x', opts)
 
 -- Vertical scroll and center
-vim.keymap.set("n", "<C-d>", "<C-d>zz", with_desc(opts, "Scroll down and center"))
-vim.keymap.set("n", "<C-u>", "<C-u>zz", with_desc(opts, "Scroll up and center"))
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz", with_desc(opts, "Scroll down and center"))
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz", with_desc(opts, "Scroll up and center"))
 
 -- Find and center
 vim.keymap.set("n", "n", "nzzzv", with_desc(opts, "Previous and center"))
@@ -34,8 +39,18 @@ vim.keymap.set("n", "N", "Nzzzv", with_desc(opts, "Next and center"))
 -- Resize with arrows
 vim.keymap.set("n", "<A-Up>", ":resize +2<CR>", with_desc(opts, "Resize window +2"))
 vim.keymap.set("n", "<A-Down>", ":resize -2<CR>", with_desc(opts, "Resize window -2"))
-vim.keymap.set("n", "<A-Left>", ":vertical resize +2<CR>", with_desc(opts, "Resize window vertical +2"))
-vim.keymap.set("n", "<A-Right>", ":vertical resize -2<CR>", with_desc(opts, "Resize window vertical -2"))
+vim.keymap.set(
+  "n",
+  "<A-Left>",
+  ":vertical resize +2<CR>",
+  with_desc(opts, "Resize window vertical +2")
+)
+vim.keymap.set(
+  "n",
+  "<A-Right>",
+  ":vertical resize -2<CR>",
+  with_desc(opts, "Resize window vertical -2")
+)
 
 -- Buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", with_desc(opts, "Next Buffer"))
@@ -77,7 +92,22 @@ vim.keymap.set("n", "<leader>ll", "<cmd>set wrap!<CR>", with_desc(opts, "Toggle 
 -- vim.keymap.set('v', 'p', '"_dP', opts)
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>dN", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "Open [f]loating diagnostic message" })
+vim.keymap.set(
+  "n",
+  "<leader>dN",
+  vim.diagnostic.goto_prev,
+  { desc = "Go to previous diagnostic message" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>dn",
+  vim.diagnostic.goto_next,
+  { desc = "Go to next diagnostic message" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>df",
+  vim.diagnostic.open_float,
+  { desc = "Open [f]loating diagnostic message" }
+)
 vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics [l]ist" })
