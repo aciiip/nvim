@@ -54,12 +54,6 @@ return { -- Highlight, edit, and navigate code
   --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 
   config = function(_, opts)
-    vim.filetype.add({
-      pattern = {
-        [".*%.blade%.php"] = "blade",
-      },
-    })
-
     require("nvim-treesitter.configs").setup(opts)
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
@@ -71,6 +65,16 @@ return { -- Highlight, edit, and navigate code
         branch = "main",
       },
       filetype = "blade",
+    }
+
+    ---@diagnostic disable-next-line: inject-field
+    parser_config.dotenv = {
+      install_info = {
+        url = "https://github.com/pnx/tree-sitter-dotenv",
+        branch = "main",
+        files = { "src/parser.c", "src/scanner.c" },
+      },
+      filetype = "dotenv",
     }
   end,
 }
