@@ -32,7 +32,7 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    local bg_transparent = true
+    local bg_transparent = false
 
     local toggle_transparency = function()
       bg_transparent = not bg_transparent
