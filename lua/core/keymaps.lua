@@ -111,3 +111,6 @@ vim.keymap.set(
   { desc = "Open [f]loating diagnostic message" }
 )
 vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist, { desc = "Open diagnostics [l]ist" })
+
+-- Codeium
+vim.keymap.set("n", "<leader>c", ":Codeium Chat<CR>", with_desc(opts, "Codeium [C]hat"))
