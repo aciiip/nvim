@@ -36,16 +36,16 @@ return { -- Autocompletion
 
     "aciiip/nvim-c-css",
 
-    "Exafunction/codeium.nvim",
+    -- "Exafunction/codeium.nvim",
   },
   config = function()
     -- See `:help cmp`
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    local codeium = require("codeium")
+    -- local codeium = require("codeium")
 
     luasnip.config.setup({})
-    codeium.setup({})
+    -- codeium.setup({})
 
     local kind_icons = {
       Text = "󰉿",
@@ -175,7 +175,7 @@ return { -- Autocompletion
             },
           },
         },
-        { name = "codeium" },
+        -- { name = "codeium" },
       },
       formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -186,16 +186,16 @@ return { -- Autocompletion
             luasnip = "[Snippet]",
             buffer = "[Buffer]",
             path = "[Path]",
-            codeium = "[Codeium]",
+            -- codeium = "[Codeium]",
           })[entry.source.name]
 
           if entry.source.name == "c_css" then
             vim_item.menu = "[" .. (entry.completion_item.provider or "C_CSS") .. "]"
           end
 
-          if entry.source.name == "codeium" then
-            vim_item.kind = "󰎃"
-          end
+          -- if entry.source.name == "codeium" then
+          --   vim_item.kind = "󰎃"
+          -- end
 
           return vim_item
         end,
