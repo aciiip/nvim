@@ -14,13 +14,31 @@ return {
   config = function()
     local lint = require("lint")
 
-    local phpcs = lint.linters.phpcs
-    phpcs.args = {
+    lint.linters.phpcs.args = {
       "-q",
       "--standard=PSR12",
       "--report=json",
       "-",
     }
+    -- lint.linters.phpcs.parser = function(output, bufnr)
+    --   local decoded = vim.fn.json_decode(output)
+    --   local diagnostics = {}
+    --
+    --   for _, file in pairs(decoded.files or {}) do
+    --     for _, message in ipairs(file.messages) do
+    --       table.insert(diagnostics, {
+    --         bufnr = bufnr,
+    --         lnum = message.line - 1,
+    --         col = message.column - 1,
+    --         end_col = message.column,
+    --         severity = vim.diagnostic.severity.HINT,
+    --         message = message.message,
+    --         source = "phpcs",
+    --       })
+    --     end
+    --   end
+    --   return diagnostics
+    -- end
 
     lint.linters_by_ft = {
       -- javascript = { "eslint_d" },
