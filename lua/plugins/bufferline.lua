@@ -26,14 +26,14 @@ return {
         show_buffer_icons = true,
         show_buffer_close_icons = true,
         show_close_icon = true,
-        persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+        persist_buffer_sort = false, -- whether or not custom sorted buffers should persist
         separator_style = { "│", "│" }, -- | "thick" | "thin" | { 'any', 'any' },
         enforce_regular_tabs = true,
         always_show_bufferline = true,
         show_tab_indicators = false,
         indicator = {
           -- icon = '▎', -- this should be omitted if indicator style is not 'icon'
-          style = "none", -- Options: 'icon', 'underline', 'none'
+          style = "underline", -- Options: 'icon', 'underline', 'none'
         },
         icon_pinned = "󰐃",
         minimum_padding = 1,
@@ -56,5 +56,39 @@ return {
         -- fill = {},
       },
     })
+
+    local function go_to_buffer()
+      vim.ui.input({ prompt = "Go To Buffer: " }, function(input)
+        if input ~= nil then
+          local offset = tonumber(input)
+          if offset then
+            require("bufferline").go_to(offset)
+          else
+            vim.notify("Buffer not found!", vim.log.levels.ERROR)
+          end
+        end
+      end)
+    end
+
+    vim.keymap.set(
+      "n",
+      "<leader>bg",
+      go_to_buffer,
+      { noremap = true, silent = true, desc = "[B]uffer [G]o" }
+    )
+
+    vim.keymap.set(
+      "n",
+      "<leader>bp",
+      "<cmd>BufferLinePick<CR>",
+      { noremap = true, silent = true, desc = "[B]uffer [P]ick" }
+    )
+
+    vim.keymap.set(
+      "n",
+      "<leader>bq",
+      "<cmd>BufferLinePickClose<CR>",
+      { noremap = true, silent = true, desc = "[B]uffer [Q]uit Pick" }
+    )
   end,
 }
