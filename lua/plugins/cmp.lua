@@ -186,12 +186,9 @@ return { -- Autocompletion
             luasnip = "[Snippet]",
             buffer = "[Buffer]",
             path = "[Path]",
+            c_css = "[" .. (entry.completion_item.provider or "C_CSS") .. "]",
             -- codeium = "[Codeium]",
           })[entry.source.name]
-
-          if entry.source.name == "c_css" then
-            vim_item.menu = "[" .. (entry.completion_item.provider or "C_CSS") .. "]"
-          end
 
           -- if entry.source.name == "codeium" then
           --   vim_item.kind = "󰎃"

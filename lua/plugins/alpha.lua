@@ -25,16 +25,16 @@ return {
       }
 
       dashboard.section.buttons.val = {
-        dashboard.button("n", " " .. " New file", "<cmd> enew <cr>"),
-        dashboard.button("f", " " .. " Find file", "<cmd> Telescope find_files <cr>"),
-        dashboard.button("g", " " .. " Find text", "<cmd> Telescope grep_string <cr>"),
-        -- dashboard.button("r", " " .. " Recent files", "<cmd> Telescope resume <cr>"),
+        dashboard.button("n", " " .. " [N]ew file", "<cmd> enew <cr>"),
         dashboard.button(
           "s",
-          " " .. " Restore Session",
+          " " .. " Restore [S]ession",
           "<cmd> SessionManager load_current_dir_session <cr>"
         ),
-        dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
+        dashboard.button("f", " " .. " Find [F]ile", "<cmd> Telescope find_files <cr>"),
+        dashboard.button("g", " " .. " Find [G]rep", "<cmd> Telescope live_grep <cr>"),
+        -- dashboard.button("r", " " .. " Recent files", "<cmd> Telescope resume <cr>"),
+        dashboard.button("q", " " .. " [Q]uit", "<cmd> qa <cr>"),
       }
 
       alpha.setup(dashboard.opts)
