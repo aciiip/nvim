@@ -12,14 +12,14 @@ local with_desc = function(opt, desc)
 end
 
 -- save file
--- vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
+vim.keymap.set("n", "<leader>ss", "<cmd> w <CR>", with_desc(opts, "[S]ave file"))
 
 -- save file without auto-formatting
 vim.keymap.set(
   "n",
-  "<leader>s",
+  "<leader>sw",
   "<cmd>noautocmd w <CR>",
-  with_desc(opts, "Save file without auto-formatting")
+  with_desc(opts, "[S]ave file [W]ithout auto-formatting")
 )
 
 -- quit file

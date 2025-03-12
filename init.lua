@@ -32,4 +32,5 @@ require("lazy").setup({
   require("plugins.misc"),
   require("plugins.indent-blankline"),
   require("plugins.noice"),
+  require("plugins.flash"),
 })

@@ -48,13 +48,17 @@ return {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       defaults = {
+        -- stylua: ignore start
         mappings = {
           i = {
             ["<C-k>"] = require("telescope.actions").move_selection_previous, -- move to prev result
             ["<C-j>"] = require("telescope.actions").move_selection_next, -- move to next result
             ["<C-l>"] = require("telescope.actions").select_default, -- open file
+            ["<C-h>"] = require("telescope.actions").toggle_selection,
+            ["<C-o>"] = require("telescope.actions").send_selected_to_qflist + require("telescope.actions").open_qflist,
           },
         },
+        -- stylua: ignore end
       },
       pickers = {
         find_files = {
@@ -90,6 +94,7 @@ return {
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
     vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
     vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
+    vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "[G]it [S]tatus" })
     vim.keymap.set(
       "n",
       "<leader>f.",
