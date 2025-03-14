@@ -44,6 +44,9 @@ return {
 
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
+
+    local ignore_pattern = { "node_modules", ".git", ".venv", "vendor", "build" }
+
     require("telescope").setup({
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
@@ -62,12 +65,12 @@ return {
       },
       pickers = {
         find_files = {
-          file_ignore_patterns = { "node_modules", ".git", ".venv", "vendor" },
+          file_ignore_patterns = ignore_pattern,
           hidden = true,
           no_ignore = true,
         },
         live_grep = {
-          file_ignore_patterns = { "node_modules", ".git", ".venv", "vendor" },
+          file_ignore_patterns = ignore_pattern,
           additional_args = function(_)
             return { "--hidden", "--no-ignore" }
           end,
@@ -109,7 +112,7 @@ return {
     )
 
     -- Slightly advanced example of overriding default behavior and theme
-    vim.keymap.set("n", "<leader>/", function()
+    vim.keymap.set("n", "<leader>f/", function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
       builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
         winblend = 10,
@@ -119,11 +122,11 @@ return {
 
     -- It's also possible to pass additional configuration options.
     --  See `:help telescope.builtin.live_grep()` for information about particular keys
-    vim.keymap.set("n", "<leader>f/", function()
+    vim.keymap.set("n", "<leader>fo", function()
       builtin.live_grep({
         grep_open_files = true,
         prompt_title = "Live Grep in Open Files",
       })
-    end, { desc = "[F]ind [/] in Open Files" })
+    end, { desc = "[F]ind in [O]pen Files" })
   end,
 }

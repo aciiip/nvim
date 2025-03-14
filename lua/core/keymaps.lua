@@ -13,6 +13,7 @@ end
 
 -- save file
 vim.keymap.set("n", "<leader>ss", "<cmd> w <CR>", with_desc(opts, "[S]ave file"))
+vim.keymap.set("n", "<leader>sa", "<cmd> wa <CR>", with_desc(opts, "[S]ave [A]ll file"))
 
 -- save file without auto-formatting
 vim.keymap.set(
@@ -65,8 +66,8 @@ vim.keymap.set("n", "<leader>bl", ":blast<CR>", with_desc(opts, "[B]uffer [L]ast
 -- Window management
 -- vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
 -- vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
--- vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
-vim.keymap.set("n", "<leader>wc", ":close<CR>", with_desc(opts, "[W]indow [C]lose")) -- close current split window
+-- vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows e]qual width & height
+vim.keymap.set("n", "<leader>ww", ":close<CR>", with_desc(opts, "[W]indow Close")) -- close current split window
 vim.keymap.set("n", "<leader>wq", ":qa<CR>", with_desc(opts, "[W]indow [Q]uit all"))
 
 -- Navigate between splits

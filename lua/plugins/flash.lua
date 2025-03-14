@@ -4,6 +4,7 @@ return {
   opts = {
     modes = {
       char = {
+        enabled = false,
         char_actions = function()
           return { [";"] = "next", [","] = "prev" }
         end,
