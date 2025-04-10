@@ -54,3 +54,32 @@ return {
     )
   end,
 }
+
+-- return {
+--   "folke/tokyonight.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     local bg_transparent = false
+--
+--     local toggle_transparency = function()
+--       bg_transparent = not bg_transparent
+--
+--       require("tokyonight").setup({
+--         style = "night",
+--         transparent = bg_transparent,
+--       })
+--
+--       vim.cmd.colorscheme("tokyonight")
+--     end
+--
+--     toggle_transparency()
+--
+--     vim.keymap.set(
+--       "n",
+--       "<leader>wb",
+--       toggle_transparency,
+--       { noremap = true, silent = true, desc = "Toggle [W]indow [B]ackground transparency" }
+--     )
+--   end
+-- }

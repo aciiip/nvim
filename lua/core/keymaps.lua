@@ -12,19 +12,19 @@ local with_desc = function(opt, desc)
 end
 
 -- save file
-vim.keymap.set("n", "<leader>ss", "<cmd> w <CR>", with_desc(opts, "[S]ave file"))
-vim.keymap.set("n", "<leader>sa", "<cmd> wa <CR>", with_desc(opts, "[S]ave [A]ll file"))
+-- vim.keymap.set("n", "<leader>ss", "<cmd> w <CR>", with_desc(opts, "[S]ave file"))
+-- vim.keymap.set("n", "<leader>sa", "<cmd> wa <CR>", with_desc(opts, "[S]ave [A]ll file"))
 
 -- save file without auto-formatting
-vim.keymap.set(
-  "n",
-  "<leader>sw",
-  "<cmd>noautocmd w <CR>",
-  with_desc(opts, "[S]ave file [W]ithout auto-formatting")
-)
+-- vim.keymap.set(
+--   "n",
+--   "<leader>sw",
+--   "<cmd>noautocmd w <CR>",
+--   with_desc(opts, "[S]ave file [W]ithout auto-formatting")
+-- )
 
 -- quit file
-vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", with_desc(opts, "Quit"))
+-- vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", with_desc(opts, "Quit"))
 
 -- delete single character without copying into register
 -- vim.keymap.set('n', 'x', '"_x', opts)
@@ -34,8 +34,8 @@ vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", with_desc(opts, "Quit"))
 -- vim.keymap.set("n", "<C-u>", "<C-u>zz", with_desc(opts, "Scroll up and center"))
 
 -- Find and center
-vim.keymap.set("n", "n", "nzzzv", with_desc(opts, "Previous and center"))
-vim.keymap.set("n", "N", "Nzzzv", with_desc(opts, "Next and center"))
+-- vim.keymap.set("n", "n", "nzzzv", with_desc(opts, "Next and center"))
+-- vim.keymap.set("n", "N", "Nzzzv", with_desc(opts, "Previous and center"))
 
 -- Resize with arrows
 vim.keymap.set("n", "<A-Up>", ":resize +2<CR>", with_desc(opts, "Resize window +2"))
@@ -53,22 +53,12 @@ vim.keymap.set(
   with_desc(opts, "Resize window vertical -2")
 )
 
--- Buffers
-vim.keymap.set("n", "<S-l>", ":bnext<CR>", with_desc(opts, "Next Buffer"))
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>", with_desc(opts, "Previous Buffer"))
-vim.keymap.set("n", "<leader>bd", ":Bdelete!<CR>", with_desc(opts, "[B]uffer [D]elete")) -- close buffer
-vim.keymap.set("n", "<leader>bc", "<cmd> enew <CR>", with_desc(opts, "[B]uffer [C]reate")) -- new buffer
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", with_desc(opts, "[B]uffer [N]ext"))
-vim.keymap.set("n", "<leader>bN", ":bprevious<CR>", with_desc(opts, "Previous Buffer"))
-vim.keymap.set("n", "<leader>bf", ":bfirst<CR>", with_desc(opts, "[B]uffer [F]irst"))
-vim.keymap.set("n", "<leader>bl", ":blast<CR>", with_desc(opts, "[B]uffer [L]ast"))
-
 -- Window management
--- vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
--- vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
--- vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows e]qual width & height
-vim.keymap.set("n", "<leader>ww", ":close<CR>", with_desc(opts, "[W]indow Close")) -- close current split window
-vim.keymap.set("n", "<leader>wq", ":qa<CR>", with_desc(opts, "[W]indow [Q]uit all"))
+-- vim.keymap.set('n', '<leader>wv', '<C-w>v', opts) -- split window vertically
+-- vim.keymap.set('n', '<leader>wh', '<C-w>s', opts) -- split window horizontally
+-- vim.keymap.set('n', '<leader>we', '<C-w>=', opts) -- make split windows e]qual width & height
+-- vim.keymap.set("n", "<leader>ww", ":close<CR>", with_desc(opts, "[W]indow Close")) -- close current split window
+-- vim.keymap.set("n", "<leader>wq", ":qa<CR>", with_desc(opts, "[W]indow [Q]uit all"))
 
 -- Navigate between splits
 -- vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)

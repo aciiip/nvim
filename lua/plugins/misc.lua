@@ -10,23 +10,25 @@ return {
   },
   {
     -- Powerful Git integration for Vim
+    -- Git on vim command
     "tpope/vim-fugitive",
   },
   {
     -- GitHub integration for vim-fugitive
+    -- GBrowse
     "tpope/vim-rhubarb",
   },
   {
     -- Hints keybinds
     "folke/which-key.nvim",
   },
-  {
-    -- Autoclose parentheses, brackets, quotes, etc.
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true,
-    opts = {},
-  },
+  -- {
+  --   -- Autoclose parentheses, brackets, quotes, etc.
+  --   "windwp/nvim-autopairs",
+  --   event = "InsertEnter",
+  --   config = true,
+  --   opts = {},
+  -- },
   {
     -- Highlight todo, notes, etc in comments
     "folke/todo-comments.nvim",
@@ -36,27 +38,26 @@ return {
   },
   {
     -- High-performance color highlighter
+    -- show color on color text
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()
     end,
   },
   {
-    -- Smooth scroll
-    "karb94/neoscroll.nvim",
-    config = function()
-      require("neoscroll").setup({
-        duration_multiplier = 0.3,
-      })
-    end,
-  },
-  {
     -- Coment shortcut
+    -- GCC
     "numToStr/Comment.nvim",
     opts = {},
   },
+  -- {
+  --   -- Use treesitter to autoclose and autorename html tag
+  --   "windwp/nvim-ts-autotag",
+  --   opts = {},
+  -- },
   {
-    "windwp/nvim-ts-autotag",
-    opts = {},
+    -- md viewer
+    "OXY2DEV/markview.nvim",
+    lazy = false,
   },
 }

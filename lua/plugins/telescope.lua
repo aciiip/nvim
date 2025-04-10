@@ -60,6 +60,10 @@ return {
             ["<C-h>"] = require("telescope.actions").toggle_selection,
             ["<C-o>"] = require("telescope.actions").send_selected_to_qflist + require("telescope.actions").open_qflist,
           },
+          -- n = {
+          --   ['<Esc>'] = false,
+          --   ["<C-c>"] = require("telescope.actions").close,
+          -- }
         },
         -- stylua: ignore end
       },
@@ -67,12 +71,13 @@ return {
         find_files = {
           file_ignore_patterns = ignore_pattern,
           hidden = true,
-          no_ignore = true,
+          -- no_ignore = true,
         },
         live_grep = {
           file_ignore_patterns = ignore_pattern,
           additional_args = function(_)
-            return { "--hidden", "--no-ignore" }
+            return { "--hidden" }
+            -- return { "--hidden", "--no-ignore" }
           end,
         },
       },
@@ -98,17 +103,12 @@ return {
     vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
     vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
     vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "[G]it [S]tatus" })
+    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" })
     vim.keymap.set(
       "n",
       "<leader>f.",
       builtin.oldfiles,
       { desc = '[F]ind Recent Files ("." for repeat)' }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>f<leader>",
-      builtin.buffers,
-      { desc = "[ ] Find existing buffers" }
     )
 
     -- Slightly advanced example of overriding default behavior and theme
