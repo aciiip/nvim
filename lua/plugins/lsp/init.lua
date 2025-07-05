@@ -86,7 +86,7 @@ return {
       lua_ls = require("plugins.lsp.servers.lua_ls"),
       phpactor = {},
       intelephense = {},
-      volar = require("plugins.lsp.servers.volar"),
+      -- volar = require("plugins.lsp.servers.volar"),
       ts_ls = require("plugins.lsp.servers.ts_ls"),
       -- vtsls = require("plugins.lsp.servers.vtsls"),
     }
