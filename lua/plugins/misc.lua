@@ -59,6 +59,7 @@ return {
   --   -- md viewer
   --   "OXY2DEV/markview.nvim",
   --   lazy = false,
+  --   priority = 49,
   -- },
   {
     -- md browser viewer
