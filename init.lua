@@ -35,4 +35,5 @@ require("lazy").setup({
   require("plugins.indent-blankline"),
   require("plugins.noice"),
   require("plugins.flash"),
+  require("plugins.flutter"),
 })
