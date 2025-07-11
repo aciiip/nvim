@@ -168,7 +168,7 @@ return { -- Autocompletion
         {
           name = "c_css",
           option = {
-            enable_on = { "html", "vue", "php" }, -- html is enabled by default
+            enable_on = { "html", "vue", "php", "phtml" }, -- html is enabled by default
             notify = true,
             documentation = {
               auto_show = true, -- show documentation on select
