@@ -76,7 +76,7 @@ return {
         live_grep = {
           file_ignore_patterns = ignore_pattern,
           additional_args = function(_)
-            return { "--hidden" }
+            return { "--hidden", "--fixed-strings" }
             -- return { "--hidden", "--no-ignore" }
           end,
         },
