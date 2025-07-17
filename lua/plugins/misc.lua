@@ -75,6 +75,18 @@ return {
     -- Markdown Viewer
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    opts = {},
+    opts = {
+      render_modes = true,
+      sign = {
+        enabled = false
+      },
+      heading = {
+        width = "block",
+        position = "inline"
+      },
+      code = {
+        width = "block",
+      }
+    },
   }
 }
