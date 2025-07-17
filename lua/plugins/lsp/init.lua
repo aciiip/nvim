@@ -112,6 +112,7 @@ return {
       "stylelint",
       "yamllint",
       "blade-formatter",
+      "marksman",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
