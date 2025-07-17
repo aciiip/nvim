@@ -13,7 +13,7 @@ return {
       },
       use_default_keymaps = true,
       keymaps = {
-        ["<esc>"] = { "actions.close", mode = "n" },
+        ["q"] = { "actions.close", mode = "n" },
       },
     });
     -- vim.keymap.set("n", "<leader>oo", "<cmd>Oil<CR>", { silent = true, noremap = true, desc = "Open [O]il"});
