@@ -80,13 +80,13 @@ return {
       sign = {
         enabled = false
       },
-      heading = {
-        width = "block",
-        position = "inline"
-      },
-      code = {
-        width = "block",
-      }
+      -- heading = {
+      --   width = "block",
+      --   position = "inline"
+      -- },
+      -- code = {
+      --   width = "block",
+      -- }
     },
   }
 }
