@@ -19,11 +19,11 @@ return {
         vue = { "prettier" },
         markdown = { "markdownlint" },
       },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 2000,
-      },
+      -- format_on_save = {
+      --   lsp_fallback = true,
+      --   async = false,
+      --   timeout_ms = 2000,
+      -- },
       notify_on_error = true,
       formatters = {
         ["php-cs-fixer"] = {
@@ -37,5 +37,40 @@ return {
         },
       },
     })
+
+    vim.keymap.set("n", "<leader>cf", function()
+      require("conform").format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 2000,
+      })
+    end, { desc = "[F]ormat Buffer" })
+
+    vim.keymap.set("v", "<leader>cf", function()
+      local start_row = vim.fn.getpos("v")[2] - 1
+      local end_row = vim.fn.getpos(".")[2] - 1
+      if start_row > end_row then
+        start_row, end_row = end_row, start_row
+      end
+
+      local range = {
+        start = { start_row, 0 },
+        ["end"] = { end_row + 1, 0 },
+      }
+
+      vim.lsp.buf.format({
+        async = false,
+        range = range,
+      })
+
+      require("conform").format({
+        lsp_fallback = false,
+        async = false,
+        timeout_ms = 2000,
+        range = range,
+      })
+
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+    end, { desc = "[F]ormat Selected" })
   end,
 }

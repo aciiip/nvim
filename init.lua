@@ -28,7 +28,7 @@ require("lazy").setup({
   require("plugins.lsp"),
   require("plugins.cmp"),
   -- require("plugins.lint"),
-  -- require("plugins.conform"),
+  require("plugins.conform"),
   require("plugins.gitsigns"),
   require("plugins.alpha"),
   require("plugins.mini"),
