@@ -35,13 +35,13 @@ return {
           },
           stdin = false,
         },
-        ["blade-formatter"] = {
-          command = "blade-formatter",
-          args = {
-            "--wrap-line-length", "999",
-            "$FILENAME",
-          },
-        },
+        -- ["blade-formatter"] = {
+        --   command = "blade-formatter",
+        --   args = {
+        --     "--wrap-line-length", "999",
+        --     "$FILENAME",
+        --   },
+        -- },
       },
     })
 
@@ -58,15 +58,15 @@ return {
     end, { desc = "[F]ormat Buffer" })
 
     vim.keymap.set("v", "<leader>cf", function()
-      local start_row = vim.fn.getpos("v")[2] - 1
-      local end_row = vim.fn.getpos(".")[2] - 1
+      local start_row = vim.fn.getpos("v")[2] - 0
+      local end_row = vim.fn.getpos(".")[2] - 0
       if start_row > end_row then
         start_row, end_row = end_row, start_row
       end
 
       local range = {
         start = { start_row, 0 },
-        ["end"] = { end_row + 1, 0 },
+        ["end"] = { end_row, 0 },
       }
 
       vim.lsp.buf.format({
