@@ -46,6 +46,10 @@ return {
     })
 
     vim.keymap.set("n", "<leader>cf", function()
+      vim.lsp.buf.format({
+        async = false,
+      })
+
       require("conform").format({
         lsp_fallback = true,
         async = false,
