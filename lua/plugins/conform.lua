@@ -35,6 +35,13 @@ return {
           },
           stdin = false,
         },
+        ["blade-formatter"] = {
+          command = "blade-formatter",
+          args = {
+            "--wrap-line-length", "999",
+            "$FILENAME",
+          },
+        },
       },
     })
 
