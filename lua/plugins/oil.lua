@@ -17,7 +17,7 @@ return {
           ["q"] = { "actions.close", mode = "n" },
         },
         win_options = {
-          signcolumn = "yes:2",
+          signcolumn = "yes:1",
         },
       })
       -- vim.keymap.set("n", "<leader>oo", "<cmd>Oil<CR>", { silent = true, noremap = true, desc = "Open [O]il"});
@@ -39,39 +39,39 @@ return {
         show_ignored = true, -- show files that match gitignore with !!
         symbols = {
           index = {
-            ["!"] = "", -- warning / update needed
-            ["?"] = "", -- untracked
-            ["A"] = "", -- added to index
-            ["C"] = "", -- copied
-            ["D"] = "", -- deleted
-            ["M"] = "", -- modified
-            ["R"] = "", -- renamed
-            ["T"] = "", -- type changed
-            ["U"] = "", -- unmerged (conflict)
+            ["!"] = "!", -- warning / update needed
+            ["?"] = "?", -- untracked
+            ["A"] = "+", -- added to index
+            ["C"] = "", -- copied
+            ["D"] = "", -- deleted
+            ["M"] = "", -- modified
+            ["R"] = "󰁔", -- renamed
+            ["T"] = "", -- type changed
+            ["U"] = "", -- unmerged (conflict)
             [" "] = " ", -- no change
           },
           working_tree = {
-            ["!"] = "",
-            ["?"] = "",
-            ["A"] = "",
-            ["C"] = "",
-            ["D"] = "",
-            ["M"] = "",
-            ["R"] = "",
-            ["T"] = "",
-            ["U"] = "",
+            ["!"] = "!",
+            ["?"] = "?",
+            ["A"] = "+",
+            ["C"] = "",
+            ["D"] = "",
+            ["M"] = "",
+            ["R"] = "󰁔",
+            ["T"] = "",
+            ["U"] = "",
             [" "] = " ",
           },
         },
       })
 
-      for _, hl_group in pairs(require("oil-git-status").highlight_groups) do
-        if hl_group.index then
-          vim.api.nvim_set_hl(0, hl_group.hl_group, { fg = "#ff0000" })
-        else
-          vim.api.nvim_set_hl(0, hl_group.hl_group, { fg = "#00ff00" })
-        end
-      end
+      -- for _, hl_group in pairs(require("oil-git-status").highlight_groups) do
+      --   if hl_group.index then
+      --     vim.api.nvim_set_hl(0, hl_group.hl_group, { fg = "#ff0000" })
+      --   else
+      --     vim.api.nvim_set_hl(0, hl_group.hl_group, { fg = "#00ff00" })
+      --   end
+      -- end
     end,
   },
 }
